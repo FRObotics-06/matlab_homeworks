@@ -2,7 +2,7 @@
 % Email: seidma59@rowan.edu
 % Course: MATLAB Programming - Fall 2024
 % Assignment: Assignment 2
-% Task: 2
+% Task: 4
 % Date: 10/18/24
 
 % creating vectors for distance and size

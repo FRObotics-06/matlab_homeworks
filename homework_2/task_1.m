@@ -2,7 +2,7 @@
 % Email: seidma59@rowan.edu
 % Course: MATLAB Programming - Fall 2024
 % Assignment: Assignment 2
-% Task: 2
+% Task: 1
 % Date: 10/17/24
 
 %creating population vector

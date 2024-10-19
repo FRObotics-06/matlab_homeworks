@@ -2,7 +2,7 @@
 % Email: seidma59@rowan.edu
 % Course: MATLAB Programming - Fall 2024
 % Assignment: Assignment 2
-% Task: 2
+% Task: 5
 % Date: 10/18/24
 
 % read data from file

@@ -3,7 +3,7 @@
 % Course: MATLAB Programming - Fall 2024
 % Assignment: Assignment 2
 % Task: 2
-% Date: 10/17/24
+% Date: 10/18/24
 
 
 % creating the function
