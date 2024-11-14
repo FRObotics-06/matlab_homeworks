@@ -1,0 +1,19 @@
+% Author Name: Keira Seidman
+% Email: seidma59@rowan.edu
+% Course: MATLAB Programming - Fall 2024
+% Assignment: MidTerm
+% Date: 11/13/24
+
+% function to plot the average GPA based on the major major
+function AverageGPAByMajor(students)
+    majors = {students.Major};
+    gpas = [students.GPA];
+    tbl = table(majors', gpas', 'VariableNames', {'Major', 'GPA'});
+    avgGPA = varfun(@mean, tbl, 'InputVariables', 'GPA', 'GroupingVariables', 'Major');
+    
+    figure;
+    bar(avgGPA.mean_GPA);
+    set(gca, 'XTickLabel', avgGPA.Major, 'XTickLabelRotation', 45);
+    title('Average GPA by Major');
+    ylabel('Average GPA');
+end

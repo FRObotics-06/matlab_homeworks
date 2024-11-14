@@ -1,0 +1,48 @@
+% Author Name: Keira Seidman
+% Email: seidma59@rowan.edu
+% Course: MATLAB Programming - Fall 2024
+% Assignment: MidTerm
+% Date: 11/13/24
+
+% creating the student database
+db = StudentDatabase();
+
+% adding list of 10 students to database
+db = db.addStudent(Student(1, 'Keira Seidman', 18, 4.0, 'Mechanical Engineering'));
+db = db.addStudent(Student(2, 'Sophia Seidman', 15, 4.0, 'Computer Science'));
+db = db.addStudent(Student(3, 'Ben Reinert', 16, 3.9, 'Computer Science'));
+db = db.addStudent(Student(4, 'Brain Gayosso', 15, 3.6, 'Engineering'));
+db = db.addStudent(Student(5, 'James Chalmers', 17, 3.8, 'Mechanical Engineering'));
+db = db.addStudent(Student(6, 'Aymie Kim', 15, 4.0, 'Engineering'));
+db = db.addStudent(Student(7, 'Nikki Pezzeca', 17, 3.5, 'Engineering'));
+db = db.addStudent(Student(8, 'Jonathan Mano-Hernandez', 17, 3.4, 'Civil Engineering'));
+db = db.addStudent(Student(9, 'Kaidin Tran', 15, 3.7, 'Theater'));
+db = db.addStudent(Student(10, 'Ethan Zhao', 17, 4.0, 'Manufacturing'));
+
+% displaying student with the ID  of 10
+student10 = db.findStudentByID(10);
+if ~isempty(student10)
+    fprintf('\n*******Student 10 Found******* \n \n')
+    student10.displayInfo();
+else
+    fprintf('*******Student not found*******\n');
+end
+
+% way to find all of the students who are in engineering major
+engineeringStudents = db.getStudentsByMajor('Engineering');
+fprintf(['***Students in Engineering*** \n \n']);
+for i = 1:length(engineeringStudents)
+    engineeringStudents(i).displayInfo();
+end
+
+% saving this database to a file
+db.saveDatabase('student_database.mat');
+
+% loading the database from the file
+db2 = StudentDatabase();
+db2 = db2.loadDatabase('student_database.mat');
+
+% Visualizations for the data
+VisualizeGPA(db2.Students);
+AverageGPAByMajor(db2.Students);
+VisualizeAge(db2.Students);

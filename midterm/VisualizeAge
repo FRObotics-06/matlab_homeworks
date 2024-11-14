@@ -1,0 +1,15 @@
+% Author Name: Keira Seidman
+% Email: seidma59@rowan.edu
+% Course: MATLAB Programming - Fall 2024
+% Assignment: MidTerm
+% Date: 11/13/24
+
+% plotting the age distribution from the database
+function VisualizeAge(students)
+    ages = [students.Age];
+    figure;
+    histogram(ages, 'Normalization', 'pdf');
+    title('Age Distribution of Students');
+    xlabel('Age');
+    ylabel('Probability');
+end

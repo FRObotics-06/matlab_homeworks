@@ -1,0 +1,50 @@
+% Author Name: Keira Seidman
+% Email: seidma59@rowan.edu
+% Course: MATLAB Programming - Fall 2024
+% Assignment: MidTerm
+% Date: 11/13/24
+
+classdef StudentDatabase
+    properties
+        Students = []; 
+    end
+    
+    methods
+        % function to add new students
+        function obj = addStudent(obj, student)
+            obj.Students = [obj.Students, student];
+        end
+        
+        % function to find students based on their ID
+        function student = findStudentByID(obj, ID)
+            student = [];
+            for i = 1:length(obj.Students)
+                if obj.Students(i).ID == ID
+                    student = obj.Students(i);
+                    break;
+                end
+            end
+        end
+        
+        % function to make list of students based on their major
+        function studentsList = getStudentsByMajor(obj, major)
+            studentsList = [];
+            for i = 1:length(obj.Students)
+                if strcmp(obj.Students(i).Major, major)
+                    studentsList = [studentsList, obj.Students(i)];
+                end
+            end
+        end
+        
+        % saving to a file
+        function saveDatabase(obj, filename)
+                save(filename, 'obj');
+        end
+        
+        % loading data from the file
+        function obj = loadDatabase(obj, filename)
+                loadedData = load(filename);
+                obj = loadedData.obj;
+        end
+    end
+end
